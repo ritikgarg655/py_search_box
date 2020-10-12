@@ -1,7 +1,7 @@
 class TrieNode(object):
     def __init__(self, char: str):
         self.char = char
-        self.children = [0]*26
+        self.children = [0]*36
         self.word_finished = False
         self.end_word = False
         self.end_index = -1
