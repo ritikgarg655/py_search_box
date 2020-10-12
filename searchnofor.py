@@ -24,7 +24,7 @@ def add(root, word: str):
     for char in word:
         found_in_child = False
         # Search for the character in the children of the present `node`
-        
+        print(ord(char)-ord('a'))
         if node.children[ord(char)-ord('a')] != 0:
                 # We found it, increase the counter by 1 to keep track that another
                 # word has it as well
@@ -36,7 +36,7 @@ def add(root, word: str):
         # We did not find it so add a new chlid
         if not found_in_child:
             new_node = TrieNode(char)
-            node.children.append(new_node)
+            node.children[ord(char)-ord('a')] = new_node
             # And then point node to the new child
             node = new_node
     # Everything finished. Mark it as the end of a word.
@@ -54,15 +54,17 @@ def find_prefix(root, prefix: str) -> Tuple[bool, int]:
     # Because it means we are trying to search in an empty trie
     if not root.children:
         return False, 0
+
     for char in prefix:
         char_not_found = True
         # Search through all the children of the present `node`
+        print(ord(char)-ord('a'))
         if node.children[ord(char)-ord('a')] != 0:
                 # We found it, increase the counter by 1 to keep track that another
                 # word has it as well
             
                 # And point the node to the child that contains this char
-            node = child
+            node = node.children[ord(char)-ord('a')]
             char_not_found = False
             break
         # Return False anyway when we did not find a char.
