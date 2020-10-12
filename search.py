@@ -1,14 +1,21 @@
 from index_intersection import *
 
+
 def return_index( w):
+    l = [',','.','/','~','!','#','\'','$','%','&','(',')','…',':','-']
     if(w<='9' and w>='0'):
         return ord(w)-ord('0')
+    elif w in l:
+        return 10+l.index(w)
+    elif (w<='z' and w>='a'):
+        return ord(w)-ord('a')+20+2+1+1+1
     else:
-        return ord(w)-ord('a')+10
+        return 0
+
 class TrieNode(object):
     def __init__(self, char: str):
         self.char = char
-        self.children = [0]*36
+        self.children = [0]*51
         self.word_finished = False
         self.end_word = False
         self.end_index = -1
@@ -59,6 +66,7 @@ def find(root, prefix: str):
     return list_index
 
 def insert(root,word,index):
+    word = word.lower()
     for i in range(0,len(word)):
         for j in range(i+1,len(word)):
             add(root,word[i:j+1],index)
