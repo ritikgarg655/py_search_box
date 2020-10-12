@@ -1,8 +1,8 @@
 def return_index( w):
     if(w<='9' and w>='0'):
-        return w-'0'
+        return ord(w)-ord('0')
     else:
-        return ord(w)-'a'+10
+        return ord(w)-ord('a')+10
 class TrieNode(object):
     def __init__(self, char: str):
         self.char = char
