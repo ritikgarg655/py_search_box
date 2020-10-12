@@ -1,13 +1,9 @@
 from index_intersection import *
-<<<<<<< HEAD
 
-
-=======
 def lowersentence(d):
     lst = [x.lower() for x in d]
     return lst
     
->>>>>>> 698fdb4e27281dc21b76890f55f125b26cda05f8
 def return_index( w):
     l = [',','.','/','~','!','#','\'','$','%','&','(',')','…',':','-']
     if(w<='9' and w>='0'):
