@@ -3,6 +3,10 @@ from index_intersection import *
 def lowersentence(d):
     lst = [x.lower() for x in d]
     return lst
+
+def split_list(sentence):
+    # Split each sentence in the list, and append to result list
+    return [item.split() for item in sentence]
     
 def return_index( w):
     l = [',','.','/','~','!','#','\'','$','%','&','(',')','…',':','-']
