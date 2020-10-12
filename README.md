@@ -12,3 +12,4 @@
 ## Upgrade options:
   - Adding feature of index. Index means user can predefine some important matching in given sentence list for matching with query. for example: you could have an index rating of product in you sentence. Search can answer questions like "list T-shirt having rating more than 4?"
   - Direct communicate with SQL database with defined filed names.
+  - Spelling correction according to words in sentence.
