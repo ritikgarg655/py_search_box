@@ -1,3 +1,8 @@
+def return_index( w):
+    if(w<='9' and w>='0'):
+        return w-'0'
+    else:
+        return ord(w)-'a'+10
 class TrieNode(object):
     def __init__(self, char: str):
         self.char = char
@@ -12,8 +17,8 @@ def add(root, word: str,index):
         char = word[i]
         found_in_child = False
         # Search for the character in the children of the present `node`
-        if node.children[ord(char)-ord('a')] != 0:
-            node = node.children[ord(char)-ord('a')]
+        if node.children[return_index(char)] != 0:
+            node = node.children[return_index(char)]
             found_in_child = True
             if i == len(word)-1:
                 # add end word here
@@ -21,7 +26,7 @@ def add(root, word: str,index):
                 node.index = index
         if not found_in_child:
             new_node = TrieNode(char)
-            node.children[ord(char)-ord('a')] = new_node
+            node.children[return_index(char)] = new_node
             node = new_node
             if i == len(word)-1:
                 # add end word here
@@ -33,7 +38,7 @@ def add(root, word: str,index):
 def traverse(root,list_index):
     if root == 0:
         return
-    for i in range(0,26):
+    for i in range(0,36):
         traverse(root.children[i],list_index)
     if root.end_word:
         list_index.append(root.index)
@@ -42,8 +47,8 @@ def find_prefix(root, prefix: str):
     node = root
     for char in prefix:
         char_not_found = True
-        if node.children[ord(char)-ord('a')] != 0:
-            node = node.children[ord(char)-ord('a')]
+        if node.children[return_index(char)] != 0:
+            node = node.children[return_index(char)]
             char_not_found = False
         if char_not_found:
             return []
