@@ -27,9 +27,9 @@ def add(root, word: str):
         if node.children[ord(char)-ord('a')] != 0:
                 # We found it, increase the counter by 1 to keep track that another
                 # word has it as well
-            node.children.counter += 1
+            # node.children.counter += 1
                 # And point the node to the child that contains this char
-            node = children
+            node = node.children[ord(char)-ord('a')]
             found_in_child = True
             break
         # We did not find it so add a new chlid
@@ -64,14 +64,14 @@ def find_prefix(root, prefix: str) -> Tuple[bool, int]:
                 # And point the node to the child that contains this char
             node = node.children[ord(char)-ord('a')]
             char_not_found = False
-            break
+            # break
         # Return False anyway when we did not find a char.
         if char_not_found:
-            return False, 0
+            return False
     # Well, we are here means we have found the prefix. Return true to indicate that
     # And also the counter of the last node. This indicates how many words have this
     # prefix
-    return True, node.counter
+    return True
 
 if __name__ == "__main__":
     root = TrieNode('*')
@@ -90,11 +90,11 @@ if __name__ == "__main__":
     
     
     
-#     add(root, "hackathon")
-#     add(root, 'hack')
+    add(root, "hackathon")
+    add(root, 'hack')
 
-#     print(find_prefix(root, 'hac'))
-#     print(find_prefix(root, 'hack'))
-#     print(find_prefix(root, 'hackathon'))
-#     print(find_prefix(root, 'ha'))
-#     print(find_prefix(root, 'hammer'))
+    print(find_prefix(root, 'hac'))
+    print(find_prefix(root, 'hack'))
+    print(find_prefix(root, 'hackathon'))
+    print(find_prefix(root, 'ha'))
+    print(find_prefix(root, 'hammer'))
