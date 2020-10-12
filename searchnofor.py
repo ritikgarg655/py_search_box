@@ -24,15 +24,10 @@ def add(root, word: str):
     for char in word:
         found_in_child = False
         # Search for the character in the children of the present `node`
-        print(ord(char)-ord('a'))
         if node.children[ord(char)-ord('a')] != 0:
                 # We found it, increase the counter by 1 to keep track that another
                 # word has it as well
-<<<<<<< HEAD
             # node.children.counter += 1
-=======
-            node.children[ord(char)-ord('a')].counter += 1
->>>>>>> 8d6600d2e6d36cecb18290b722b83b1a7adbfe6a
                 # And point the node to the child that contains this char
             node = node.children[ord(char)-ord('a')]
             found_in_child = True
@@ -62,7 +57,6 @@ def find_prefix(root, prefix: str) -> Tuple[bool, int]:
     for char in prefix:
         char_not_found = True
         # Search through all the children of the present `node`
-        print(ord(char)-ord('a'))
         if node.children[ord(char)-ord('a')] != 0:
                 # We found it, increase the counter by 1 to keep track that another
                 # word has it as well
@@ -92,7 +86,6 @@ if __name__ == "__main__":
         print(find_prefix(root,w))
     
     
-<<<<<<< HEAD
         
     
     
@@ -105,5 +98,3 @@ if __name__ == "__main__":
     print(find_prefix(root, 'hackathon'))
     print(find_prefix(root, 'ha'))
     print(find_prefix(root, 'hammer'))
-=======
->>>>>>> 8d6600d2e6d36cecb18290b722b83b1a7adbfe6a
