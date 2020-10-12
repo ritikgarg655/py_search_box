@@ -1,5 +1,8 @@
 from index_intersection import *
-
+def lowersentence(d):
+    lst = [x.lower() for x in d]
+    return lst
+    
 def return_index( w):
     if(w<='9' and w>='0'):
         return ord(w)-ord('0')
