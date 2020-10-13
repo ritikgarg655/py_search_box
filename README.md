@@ -14,3 +14,4 @@
   - Direct communicate with SQL database with defined filed names.
   - Spelling correction according to words in sentence.
   - Add RESTfull flask API
+  - 
