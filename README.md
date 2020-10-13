@@ -1,6 +1,6 @@
 # py_search_box
 ## Feature:
-- Input:
+- Input: 
   - List of sentence (Which will be final answer).
   - Query string.
   - List of selected filter to be applied
