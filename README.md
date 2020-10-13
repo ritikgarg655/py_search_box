@@ -14,3 +14,14 @@
   - [ ] Direct communicate with SQL database with defined filed names.
   - [ ] Spelling correction according to words in sentence.
   - [x] Add RESTfull flask API
+
+## API input:
+{   
+    "data":[],
+    "filter":{
+        "upper":true,
+        "lower":true,
+        "synonyms":false,
+        "split":true
+    }
+}
