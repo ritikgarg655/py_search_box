@@ -6,9 +6,9 @@ def lowerstring(d):
 def upperstring(d):
     return d.upper()
 
-def split_list(sentence):
-    # Split each sentence in the list, and append to result list
-    return [item.split() for item in sentence]
+def split_string(sentence):
+    return sentence.split()
+
     
 def return_index( w):
     l = [',','.','/','~','!','#','\'','$','%','&','(',')','…',':','-']
