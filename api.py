@@ -21,7 +21,8 @@ def ins():
 		        "upper":False,
 		        "lower":True,
 		        "synonyms":False,
-		        "split":True
+		        "split":True,
+			"stopword":True
 		    }
 		add_dic(data,filters)
 		
