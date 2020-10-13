@@ -9,7 +9,6 @@ def upperstring(d):
 def split_string(sentence):
     return sentence.split()
 
-    
 def return_index( w):
     l = [',','.','/','~','!','#','\'','$','%','&','(',')','…',':','-']
     if(w<='9' and w>='0'):
