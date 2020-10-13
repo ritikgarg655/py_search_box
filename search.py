@@ -1,12 +1,10 @@
 from index_intersection import *
 
-def lowersentence(d):
-    lst = [x.lower() for x in d]
-    return lst
+def lowerstring(d):
+    return d.lower()
 
-def uppersentence(d):
-    lst = [x.upper() for x in d]
-    return lst
+def upperstring(d):
+    return d.upper()
 
 def split_list(sentence):
     # Split each sentence in the list, and append to result list
