@@ -103,3 +103,9 @@ def query(que):
     return index_intersection(combine_list)
 
 root = TrieNode('*')
+
+#print(find_prefix(root, 'hac'))
+#     print(find_prefix(root, 'hack'))
+#     print(find_prefix(root, 'hackathon'))
+#     print(find_prefix(root, 'ha'))
+#     print(find_prefix(root, 'hammer'))
