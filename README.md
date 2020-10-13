@@ -16,12 +16,12 @@
   - [x] Add RESTfull flask API
 
 ## API input:
-{   
-    "data":[],
-    "filter":{
-        "upper":true,
-        "lower":true,
-        "synonyms":false,
-        "split":true
-    }
-}
+&emsp;{<br>
+&emsp;&emsp;"data":[],<br>
+&emsp;&emsp;"filter":{<br>
+&emsp;&emsp;&emsp;"upper":true,<br>
+&emsp;&emsp;&emsp;"lower":true,<br>
+&emsp;&emsp;&emsp;"synonyms":false,<br>
+&emsp;&emsp;&emsp;"split":true<br>
+&emsp;&emsp;}<br>
+&emsp;}
