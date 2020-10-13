@@ -9,6 +9,15 @@ def upperstring(d):
 def split_string(sentence):
     return sentence.split()
 
+def similar_words(s):
+    import nltk
+    from nltk.corpus import wordnet
+    synonyms = []
+    for syn in wordnet.synsets(s):
+        for lemma in syn.lemmas():
+            synonyms.append(lemma.name())
+    return synonyms
+
 def return_index( w):
     l = [',','.','/','~','!','#','\'','$','%','&','(',')','…',':','-']
     if(w<='9' and w>='0'):
