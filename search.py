@@ -1,5 +1,3 @@
-#Author: Sarthak and Ritik garg
-
 from index_intersection import *
 
 def lowerstring(d):
@@ -84,17 +82,17 @@ def find(root, prefix: str):
     traverse(node,list_index)
     return list_index
 
-def insert(root,word,index):
+def insert(root,word,index,filters):
     word = word.lower()
     for i in range(0,len(word)):
         for j in range(i+1,len(word)):
             add(root,word[i:j+1],index)
 
-def add_dic(list_sentence):
+def add_dic(list_sentence,filters):
     
     for index in range(0,len(list_sentence)):
         for word in list_sentence[index].split():
-            insert(root,word,index)
+            insert(root,word,index,filters)
 
 def query(que):
     combine_list = []
@@ -103,9 +101,3 @@ def query(que):
     return index_intersection(combine_list)
 
 root = TrieNode('*')
-
-#print(find_prefix(root, 'hac'))
-#     print(find_prefix(root, 'hack'))
-#     print(find_prefix(root, 'hackathon'))
-#     print(find_prefix(root, 'ha'))
-#     print(find_prefix(root, 'hammer'))
