@@ -4,6 +4,10 @@ def lowersentence(d):
     lst = [x.lower() for x in d]
     return lst
 
+def uppersentence(d):
+    lst = [x.upper() for x in d]
+    return lst
+
 def split_list(sentence):
     # Split each sentence in the list, and append to result list
     return [item.split() for item in sentence]
