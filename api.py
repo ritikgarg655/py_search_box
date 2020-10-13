@@ -6,7 +6,8 @@ app = Flask(__name__)
 def hello():
 	if(request.method  == 'POST'):
 		input_json = request.get_json()
-		print(type(input_json['filter']))
+		print(type(input_json['data']))
+
 		return jsonify(input_json)
 
 if __name__ == '__main__':
