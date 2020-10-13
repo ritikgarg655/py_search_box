@@ -1,3 +1,5 @@
+#Author: Sarthak and Ritik
+
 from index_intersection import *
 
 def lowerstring(d):
