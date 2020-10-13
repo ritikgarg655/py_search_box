@@ -22,6 +22,7 @@
 &emsp;&emsp;&emsp;"upper":true,<br>
 &emsp;&emsp;&emsp;"lower":true,<br>
 &emsp;&emsp;&emsp;"synonyms":false,<br>
-&emsp;&emsp;&emsp;"split":true<br>
+&emsp;&emsp;&emsp;"split":true,<br>
+&emsp;&emsp;&emsp;"stopword":true<br>
 &emsp;&emsp;}<br>
 &emsp;}
