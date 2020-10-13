@@ -1,4 +1,4 @@
-#Author: Sarthak and Ritik
+#Author: Sarthak and Ritik garg
 
 from index_intersection import *
 
