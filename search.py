@@ -3,9 +3,6 @@ from index_intersection import *
 def lowerstring(d):
     return d.lower()
 
-def upperstring(d):
-    return d.upper()
-
 def split_string(sentence):
     return sentence.split()
 
@@ -33,20 +30,23 @@ def stop_filter(temp):
     return filtered_sentence
 
 def return_index( w):
-    l = [',','.','/','~','!','#','\'','$','%','&','(',')','…',':','-']
+    l = [',','.','/','~','!','#','\'','$','%','&','(',')','…',':','-',' ']
     if(w<='9' and w>='0'):
-        return ord(w)-ord('0')
+        return ord(w)-ord('0')+1
     elif w in l:
         return 10+l.index(w)
     elif (w<='z' and w>='a'):
-        return ord(w)-ord('a')+20+2+1+1+1
+        return ord(w)-ord('a')+20+2+1+1+1+1+1
+    elif (w<='Z' and w>='A'):
+        return ord(w)-ord('A')+20+2+1+1+1+26+1+1
     else:
+        # if undefine char has arrived send to  0 position
         return 0
 
 class TrieNode(object):
     def __init__(self, char: str):
         self.char = char
-        self.children = [0]*51
+        self.children = [0]*(51+26+1+1)
         self.word_finished = False
         self.end_word = False
         self.end_index = -1
@@ -97,16 +97,27 @@ def find(root, prefix: str):
     return list_index
 
 def insert(root,word,index,filters):
+    print(type(filters))
+    for key in filters:
+        if(key == 'lower' and filters[key]):
+            lowerstring(word)
+        elif key == 'synonyms' and filters[key]:
+            li = similar_words(word)
+        elif key == 'stopword' and filters[key]:
+            li2 = stop_words(word)
+
     word = word.lower()
     for i in range(0,len(word)):
         for j in range(i+1,len(word)):
             add(root,word[i:j+1],index)
 
 def add_dic(list_sentence,filters):
-    
     for index in range(0,len(list_sentence)):
-        for word in list_sentence[index].split():
-            insert(root,word,index,filters)
+        if(filters[split]):
+            for word in list_sentence[index].split():
+                insert(root,word,index,filters)
+        else:
+            insert(root,list_sentence[index],index,filters)
 
 def query(que):
     combine_list = []
