@@ -1,7 +1,7 @@
 # py_search_box
-## Feature:
-- Input:
-  - List of sentence(Which will be final answer).
+## Feature:  
+- Input: 
+  - List of sentence (Which will be final answer).
   - Query string.
   - List of selected filter to be applied
 - Output:
@@ -10,6 +10,19 @@
   - Applying filters like convert to lower case, upper case, space divider, stop word filter, synonyms filter.
 
 ## Upgrade options:
-  - Adding feature of index. Index means user can predefine some important matching in given sentence list for matching with query. for example: you could have an index rating of product in you sentence. Search can answer questions like "list T-shirt having rating more than 4?"
-  - Direct communicate with SQL database with defined filed names.
-  - Spelling correction according to words in sentence.
+  - [ ] Adding feature of index. Index means user can predefine some important matching in given sentence list for matching with query. for example: you could have an index rating of product in you sentence. Search can answer questions like "list T-shirt having rating more than 4?"
+  - [ ] Direct communicate with SQL database with defined filed names.
+  - [ ] Spelling correction according to words in sentence.
+  - [x] Add RESTfull flask API
+
+## API input:
+&emsp;{<br>
+&emsp;&emsp;"data":[],<br>
+&emsp;&emsp;"filter":{<br>
+&emsp;&emsp;&emsp;"upper":true,<br>
+&emsp;&emsp;&emsp;"lower":true,<br>
+&emsp;&emsp;&emsp;"synonyms":false,<br>
+&emsp;&emsp;&emsp;"split":true,<br>
+&emsp;&emsp;&emsp;"stopword":true<br>
+&emsp;&emsp;}<br>
+&emsp;}
