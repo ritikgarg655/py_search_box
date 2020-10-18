@@ -1,5 +1,5 @@
 # py_search_box
-## Feature:  
+## Feature:   
 - Input: 
   - List of sentence (Which will be final answer).
   - Query string.
