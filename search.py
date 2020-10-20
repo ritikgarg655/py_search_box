@@ -98,6 +98,8 @@ def find(root, prefix: str):
 
 def insert(root,word,index,filters):
     print(type(filters))
+    li2 = [word]
+    li = [word]
     for key in filters:
         if(key == 'lower' and filters[key]):
             lowerstring(word)
@@ -105,11 +107,12 @@ def insert(root,word,index,filters):
             li = similar_words(word)
         elif key == 'stopword' and filters[key]:
             li2 = stop_words(word)
-
-    word = word.lower()
-    for i in range(0,len(word)):
-        for j in range(i+1,len(word)):
-            add(root,word[i:j+1],index)
+    if(len(li2)==0):
+        return
+    for w in li:
+        for i in range(0,len(w)):
+            for j in range(i+1,len(w)):
+                add(root,word[i:j+1],index)
 
 def add_dic(list_sentence,filters):
     for index in range(0,len(list_sentence)):
