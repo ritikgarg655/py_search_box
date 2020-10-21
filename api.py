@@ -18,14 +18,12 @@ def ins():
 		except:
 			# defaut filters
 			filters = {
-		        "upper":False,
 		        "lower":True,
 		        "synonyms":False,
 		        "split":True,
-			"stopword":True
+				"stopword":True
 		    }
 		add_dic(data,filters)
-		
 		return jsonify(input_json)
 
 @app.route("/query",methods = ['POST'])
