@@ -24,17 +24,20 @@ def ins():
 				"stopword":True
 		    }
 		add_dic(data,filters)
-		return jsonify(input_json)
+		return jsonify(["OK"])
 
 @app.route("/query",methods = ['POST'])
 def que():
-	if request.methods == 'POST':
+	if request.method == 'POST':
 		input_json = request.get_json()
 		try:
 			query_str = input_json['query']
+			print(query_str)
 		except:
 			return jsonify([''])
-		return jsonify(query(query_str))
+		a = query(query_str)
+		print (a)
+		return jsonify(a)
 
 if __name__ == '__main__':
 	app.run(debug=False)
